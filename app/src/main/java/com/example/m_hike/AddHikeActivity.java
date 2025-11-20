@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.RadioButton; // <<< ĐÃ THÊM: KHẮC PHỤC LỖI
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -63,7 +63,6 @@ public class AddHikeActivity extends AppCompatActivity {
     }
 
     private void setupDifficultySpinner() {
-        // Cần định nghĩa mảng `difficulty_levels` trong res/values/arrays.xml
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.difficulty_levels,
@@ -96,7 +95,6 @@ public class AddHikeActivity extends AppCompatActivity {
 
         // --- Logic lấy giá trị RadioButton ---
         int selectedRadioButtonId = radioGroupParking.getCheckedRadioButtonId();
-        // Lỗi "Cannot resolve symbol 'RadioButton'" đã được khắc phục bằng cách import
         RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
         String parking = (selectedRadioButton != null && selectedRadioButtonId != -1) ? selectedRadioButton.getText().toString() : "";
 
